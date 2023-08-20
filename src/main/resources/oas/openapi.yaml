@@ -1,0 +1,116 @@
+openapi: 3.0.3
+info:
+  title: Message API
+  description: |-
+    Simple OAS for Message API.
+  
+
+  contact:
+    email: amaro.coria@gmail.com
+  version: "1.0"
+
+tags:
+  - name: message
+  - name: log
+
+paths:
+  /api/v1/message:
+    get:
+      tags:
+        - message
+        - log
+      summary: Retrieves all messages
+      description: Gets all message registered on the platform ordered by creation date
+      operationId: getMessages
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LogMessageResponse'
+    post:
+      tags:
+        - message
+      summary: Registers a message to be sent
+      description: Put a message to be sent by all the channels requested
+      operationId: addMessage
+      requestBody:
+        description: Creates a new message sending request
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddMessageRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AddMessageResponse'
+
+
+components:
+  schemas:
+    AddMessageRequest:
+      type: object
+      properties:
+        message:
+          $ref: "#/components/schemas/Message"
+        channels:
+          type: array
+          items:
+            $ref: '#/components/schemas/Channel'
+    AddMessageResponse:
+      type: object
+      properties:
+        message:
+          $ref: "#/components/schemas/Message"
+    LogMessageResponse:
+      type: object
+      properties:
+        messages:
+          type: array
+          items:
+            $ref: "#/components/schemas/Message"
+    Channel:
+      type: object
+      required:
+        - id
+      properties:
+        id:
+          type: integer
+          format: int32
+          example: 1
+        name:
+          type: string
+          example: SMS
+    Message:
+      type: object
+      required:
+        - messageContent
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1001
+        messageContent:
+          type: string
+          example: 140 character content
+        createdTime:
+          type: string
+          format: date-time
+          example: '2021-01-30T08:30:00Z'
+        userAuthor:
+          type: string
+          example: jhondoe314
+
+
+  requestBodies:
+    AddMessageRequest:
+      description: Body to register a message to be sent
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AddMessageRequest'

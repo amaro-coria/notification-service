@@ -16,8 +16,8 @@ public class MessageLog {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "message", nullable = false, length = 140)
-    private String message;
+    @Column(name = "message_content", nullable = false, length = 140)
+    private String messageContent;
 
     @Column(name = "created_time", nullable = false)
     private Instant createdTime;
