@@ -9,7 +9,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "subscriptions", schema = "notif")
+@Table(name = "subscriptions", schema = "notification")
 public class Subscription {
     @EmbeddedId
     private SubscriptionId id;

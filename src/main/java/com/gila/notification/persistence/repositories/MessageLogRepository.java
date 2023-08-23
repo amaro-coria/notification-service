@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface MessageLogRepository extends JpaRepository<MessageLog, Long> {
 
-    List<MessageLog> findAllOrderByCreatedTimeDesc();
+    List<MessageLog> findAllByOrderByCreatedTimeDesc();
 }

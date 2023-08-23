@@ -9,7 +9,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "message_log", schema = "notif")
+@Table(name = "message_log", schema = "notification")
 public class MessageLog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

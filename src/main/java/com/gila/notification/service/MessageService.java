@@ -26,7 +26,7 @@ public class MessageService {
     }
 
     public List<MessageLogDto> getMessages() {
-        List<MessageLog> messageLogs = messageLogRepository.findAllOrderByCreatedTimeDesc();
+        List<MessageLog> messageLogs = messageLogRepository.findAllByOrderByCreatedTimeDesc();
         return messageLogs.stream()
                 .map(messageLog -> modelMapper.map(messageLog, MessageLogDto.class))
                 .toList();

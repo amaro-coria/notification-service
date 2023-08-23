@@ -12,7 +12,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "delivery_log", schema = "notif")
+@Table(name = "delivery_log", schema = "notification")
 public class DeliveryLog {
     @EmbeddedId
     private DeliveryLogId id;

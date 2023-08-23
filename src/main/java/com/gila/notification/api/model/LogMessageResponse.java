@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.validation.Valid;
-import org.openapitools.model.Message;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

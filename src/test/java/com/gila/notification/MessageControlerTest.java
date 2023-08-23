@@ -1,4 +1,6 @@
 package com.gila.notification;
+import com.gila.notification.api.model.AddMessageRequest;
+import com.gila.notification.api.model.Message;
 import com.gila.notification.common.dto.MessageLogDto;
 import com.gila.notification.controller.MessageController;
 import com.gila.notification.service.MessageService;
@@ -8,8 +10,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.openapitools.model.AddMessageRequest;
-import org.openapitools.model.Message;
 
 import java.time.Instant;
 import java.util.Collections;

@@ -4,12 +4,13 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigInteger;
 import java.time.Instant;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "channels", schema = "notif")
+@Table(name = "channels", schema = "notification")
 public class Channel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

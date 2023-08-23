@@ -7,9 +7,24 @@ spring:
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
         show_sql: true
+        default_schema: notification
+
+# Configure Flyway for the same database
+  flyway:
+    url: jdbc:postgresql://localhost:5432/notification
+    user: postgres
+    password: postgres
+    schemas: notification
+    locations: classpath:db/migration
+    enabled: true
+springdoc:
+  api-docs:
+    enabled: true
+
+####

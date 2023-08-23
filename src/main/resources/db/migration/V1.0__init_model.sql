@@ -71,7 +71,7 @@ ALTER TABLE delivery_log
     ADD CONSTRAINT fk_delivery_log_delivery_schedule FOREIGN KEY (id_schedule) REFERENCES delivery_schedule (id) ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE delivery_schedule
-    ADD CONSTRAINT fk_delivery_schedule_channels FOREIGN KEY (id_message) REFERENCES channels (id) ON UPDATE NO ACTION ON DELETE NO ACTION;
+    ADD CONSTRAINT fk_delivery_schedule_channels FOREIGN KEY (id_channel) REFERENCES channels (id) ON UPDATE NO ACTION ON DELETE NO ACTION;
 
 ALTER TABLE delivery_schedule
     ADD CONSTRAINT fk_delivery_schedule_message_log FOREIGN KEY (id_message) REFERENCES message_log (id) ON UPDATE NO ACTION ON DELETE NO ACTION;

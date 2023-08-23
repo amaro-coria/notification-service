@@ -5,10 +5,11 @@
  */
 package com.gila.notification.api;
 
+import com.gila.notification.api.model.AddMessageRequest;
+import com.gila.notification.api.model.AddMessageResponse;
+import com.gila.notification.api.model.LogMessageResponse;
 import jakarta.validation.Valid;
-import org.openapitools.model.AddMessageRequest;
-import org.openapitools.model.AddMessageResponse;
-import org.openapitools.model.LogMessageResponse;
+
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

@@ -9,7 +9,7 @@ import java.time.Instant;
 @Getter
 @Setter
 @Entity
-@Table(name = "delivery_schedule", schema = "notif")
+@Table(name = "delivery_schedule", schema = "notification")
 public class DeliverySchedule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +18,11 @@ public class DeliverySchedule {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_message", nullable = false)
-    private Channel idMessage;
+    private MessageLog idMessage;
 
-    @Column(name = "id_channel", nullable = false)
-    private Integer idChannel;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_channel", nullable = false)
+    private Channel idChannel;
 
     @Column(name = "created_time", nullable = false)
     private Instant createdTime;

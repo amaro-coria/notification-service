@@ -3,7 +3,6 @@ package com.gila.notification.api.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
-import org.openapitools.model.Message;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 

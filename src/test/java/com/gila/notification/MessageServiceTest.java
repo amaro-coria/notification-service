@@ -51,7 +51,7 @@ public class MessageServiceTest {
         List<MessageLog> messageLogs = Collections.singletonList(new MessageLog());
         MessageLogDto resultDto = new MessageLogDto("messageContent", Instant.now(), "userAuthor");
 
-        when(messageLogRepository.findAllOrderByCreatedTimeDesc()).thenReturn(messageLogs);
+        when(messageLogRepository.findAllByOrderByCreatedTimeDesc()).thenReturn(messageLogs);
         when(modelMapper.map(messageLogs.get(0), MessageLogDto.class)).thenReturn(resultDto);
 
         List<MessageLogDto> response = messageService.getMessages();
