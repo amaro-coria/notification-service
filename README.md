@@ -58,9 +58,4 @@ Notification Service is a backend service built with Spring Boot, designed to ha
     docker run -p 8080:8080 notification-service
     ```
 
-## Usage
-
-The service exposes RESTful APIs for sending notifications. Here's an example API call to send an email:
-
-```bash
-curl -X POST http://localhost:8080/sendEmail -d '{"to":"example@email.com", "subject":"Hello", "body":"World"}'
+Please notice that there is a OpenAPI specification and a SwaggerUI endpoint for this to work easily when developing
