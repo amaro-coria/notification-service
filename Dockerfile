@@ -1,5 +1,5 @@
-# Use GraalVM for the runtime
-FROM oracle/graalvm-ce:21.3.0-java17 as runtime
+# Use OpenJDK for the runtime
+FROM openjdk:17-jdk-slim as runtime
 
 # Set the working directory
 WORKDIR /app
