@@ -59,3 +59,5 @@ Notification Service is a backend service built with Spring Boot, designed to ha
     ```
 
 Please notice that there is a OpenAPI specification and a SwaggerUI endpoint for this to work easily when developing
+http://localhost:8080/v3/api-docs
+http://localhost:8080/swagger-ui.html
